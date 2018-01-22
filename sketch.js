@@ -1,30 +1,35 @@
+var button;
+
 var sl_words = [
-  "You deserve your love and affection",
-  "Love yourself first and everything else falls into line.",
-  "Be happy",
+  "Self-care isn't selfish",
+  "Your mind must arrive at the destination before your life does",
   "Self love is the best love",
-  "Self-care is never a selfish act",
-  "Don’t rely on someone else for your happiness and self-worth. Only you can be responsible for that"
-];
+  "Love yourself first and everything else falls into line."
+  ];
 
 function setup() {
-  // put setup code here
-
-  createCanvas(1500, 800);
-  background(0);
-
-  createButton
+  createCanvas(1800, 990);
+  background(255, 190, 230);
+  button = createButton('Click Me');
+  button.position(800, 450);
+  button.mousePressed(changeWord);
 }
 
 function draw() {
-  // put drawing code here
 
-  if (keyIsPressed == true){
+  var title = 'Self-love Word Generator';
+  text(title, 600, 200, textSize(60));
 
-    var word = random(sl_words);
-    fill(random(0,255),(0,100),(0,180));
-    textSize(random(20,50));
-    text(word,random(width),random(height))
-
+  if (keyIsPressed === true) {
+    background(255, 190, 230);
   }
+}
+
+
+function changeWord() {
+ var sl_word = random(sl_words);
+
+  fill(random(0,255),(0,100),(0,180));
+  textSize(random(20,50));
+  text(sl_word,random(width),random(height))
 }
